@@ -35,10 +35,13 @@ body * {
   width: 100%;
   border: 5px solid black;
   border-radius: 75px;
-  background: rgb(10, 134, 93);
+  background: #52c234;
+  background: -webkit-linear-gradient(to bottom, #42b319, #174709);
+  background: linear-gradient(to bottom, #38ce01, #000000);
   margin: 0 auto;
   color: black;
   padding: 40px;
+  font-size: 30px;
 }
 
 .player {
@@ -57,7 +60,7 @@ body * {
 
 .hand {
   height: 200px;
-  background: rgba(10, 43, 2, 0.5);
+  background: rgba(3, 14, 0, 0.5);
   border-radius: 5px;
 }
 
