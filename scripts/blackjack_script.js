@@ -1,46 +1,27 @@
-//issue notes
-//after win, deck keeps dealing until hit play again
-//redo how deck is pulled in - currently works, but requires a very specific name structure
-
-
 window.addEventListener('DOMContentLoaded', function() {
-    // this adds the event listener to our browser window, allowing us to see our work on the browser screen
     })
-    
-    var suits = ['clubs', 'diamonds', 'hearts', 'spades'];
-    //this is to set up my suits array
+    //event listener for browser window
+
+    var suits = ['clubs', 'diamonds', 'hearts', 'spades']; //labels the 4 ssuits ♥, ♦, ♣, ♠
     
     var deck = [];
-    //this is setting the deck to an empty array, which will allow us to pull in random cards
     
     var playerHand = document.querySelector('#player-hand');
-    //this is to display the players cards
     
     var dealerHand = document.querySelector('#dealer-hand');
-    //this is to display the dealers cards
     
     var dealerHandPoints = document.querySelector('#dealer-points');
-    //this is to display the numberic points for the cards next to the dealer name
     
     var playerHandPoints = document.querySelector('#player-points');
-    //this is to display the numberic points for the cards next to the player name
     
     var deal = document.querySelector('#deal-button');
-    //this allows the deck to deal out the cards
     
     var hit = document.querySelector('#hit-button');
-    //this allows the player to get another card
     
     var stand = document.querySelector('#stand-button');
-    //the stand button allows the player to indicate that they do not wish to draw another card
     
     var playAgain = document.querySelector('#again-button');
-    //this allows the player to play another game without having to refresh the page and lose their win/loss count
-    
-    
-    
-    //the block of code below is responsible for the section that counts how many cards are left and keeps track of wins/losses.
-    
+        
     var names = document.querySelectorAll('.player-name2');
     
     var playerScoreShown = document.querySelector('.player-score-shown')
@@ -49,24 +30,13 @@ window.addEventListener('DOMContentLoaded', function() {
     
     var cardsLeft = document.querySelector('.cards-left-shown')
     
-    
-    
-    
-    
-    
     var initialPlayerHand = document.createElement('img');
     
     var initialDealerHand = document.createElement('img');
     
-    
-    
-    
     var dealerHandList = [];
-    //this sets the dealer hand to an empty array
     
-    var playerHandList = [];
-    //this sets the dealer hand to an empty array
-    
+    var playerHandList = [];    
     
     var playerPoints = 0;
     var dealerPoints = 0;
@@ -74,6 +44,7 @@ window.addEventListener('DOMContentLoaded', function() {
     var dealerScore = 0;
     var cardAmount = 52;
     
+// ================= GET CARD IMAGES ===============
     
     function getCardImage() {
         for (var i = 0; i < suits.length; i++) {
@@ -81,29 +52,28 @@ window.addEventListener('DOMContentLoaded', function() {
                 var card = {};
                 card.rank = a
                 card.suit = suits[i]
-                card.img = `images/${a}_of_${suits[i]}.png` //this is the method used to call the images. I renamed the images to begin with a number in order for it to pull everything this way. Alternatively, one could write a switch statement.
+                card.img = `images/${a}_of_${suits[i]}.png`
                 deck.push(card)
             }
         }
         }
-    //the above function is responsible for pushing the card values and images to the game
         
-    
+// ===================== SHUFFLE ====================
     
     
     function shuffleDeck(array) {
         for (var i = array.length - 1; i > 0; i--) { 
-            var a = Math.floor(Math.random() * (i + 1)); //math.random allows for the card to be different each time
+            var a = Math.floor(Math.random() * (i + 1));
+            //math.random makes cards different every time
             var temp = array[i];
             array[i] = array[a];
             array[a] = temp;
         }
         return array;
     }
-    //the above function is responsible for randomizing the cards that are drawn as well as decrementing from the original number of cards, which in the case of this game is 52
     
-    
-    
+// ================== DEAL OUT DECK ================
+
     function dealDeck(){
         let playerCard1 = deck.pop(); //allows for the last card in the deck to be taken from the deck 
         let playerCard2 = deck.pop(); //allows for the last card in the deck to be taken from the deck 
@@ -160,7 +130,7 @@ window.addEventListener('DOMContentLoaded', function() {
         cardsLeft.innerHTML = cardAmount;
         
         }
-// I don't know what the everloving hell I'm doing. Somebody save me. Dear sweet lord baby Jesus! Allah! Krishna! Buddah
+// I don't know what the everloving hell I'm doing. Somebody save me. Dear sweet lord baby Jesus! Allah! Odin! Krishna!
         
     function calculatePlayerPoints() {
         playerHandList.sort(function(a, b){
@@ -183,7 +153,7 @@ window.addEventListener('DOMContentLoaded', function() {
         
         let message = document.querySelector('.message');
         if (playerPoints > 21) {
-            message.textContent = "You Busted! Dealer Wins!"
+            message.textContent = "You Busted! House Wins!"
             hit.setAttribute('class', 'none');
             stand.setAttribute('class', 'none');
             playAgain.setAttribute('class', '');
@@ -214,7 +184,7 @@ window.addEventListener('DOMContentLoaded', function() {
     
         let message = document.querySelector('.message');
         if (dealerPoints > 21) {
-        message.textContent = "Dealer Busted! You Win!";
+        message.textContent = "House Busted! You Win!";
         hit.setAttribute('class', 'none');
         stand.setAttribute('class', 'none');
         playAgain.setAttribute('class', '');
@@ -240,13 +210,13 @@ window.addEventListener('DOMContentLoaded', function() {
         let message = document.querySelector('.message');
         if (cardAmount === 0 || cardAmount < 4) {
         if (playerScore > dealerScore) {
-            message.innerHTML = "Congratulations! You beat the Dealer!";
+            message.innerHTML = "Congratulations! You beat the House!";
             hit.setAttribute('class', 'none');
             stand.setAttribute('class', 'none');
             playAgain.setAttribute('class', 'none');
             deal.setAttribute('class', 'none');
         } else if (dealerScore > playerScore) {
-            message.innerHTML = "The Dealer won this round. Better luck next time!";
+            message.innerHTML = "The House won this round. Better luck next time!";
             hit.setAttribute('class', 'none');
             stand.setAttribute('class', 'none');
             playAgain.setAttribute('class', 'none');
@@ -267,6 +237,10 @@ window.addEventListener('DOMContentLoaded', function() {
         
         
         
+
+
+
+
         getCardImage();
         shuffleDeck(deck);
         
@@ -303,8 +277,6 @@ window.addEventListener('DOMContentLoaded', function() {
             calculatePlayerPoints();
             updateScore();
             gameOver();
-                //here you can probably put an if statement that states if a player has over 21 points they will be unable to hit anything aside from the play again button.
-
         })
         
         
@@ -323,7 +295,7 @@ window.addEventListener('DOMContentLoaded', function() {
             message.textContent = "Dealer Wins!";
             dealerScore++
         } else if (dealerPoints === 21 && playerPoints === 21) {
-            message.textContent = "You tied with the Dealer!";
+            message.textContent = "You tied with the House!";
         }
         
         

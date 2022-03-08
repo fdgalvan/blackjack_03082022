@@ -17,19 +17,21 @@ body * {
   color: green;
 }
 
-/* .score {
+.score {
   width: 200px;
   height: 225px;
   padding: 15px;
   border: 5px solid black;
   border-radius: 20px;
-  background: rgb(10, 134, 93);
-  color: black;
-} */
-
-.message-box.error {
-  color: rgb(122, 0, 0)
+  background: #52c234;
+  background: -webkit-linear-gradient(to bottom, #42b319, #174709);
+  background: linear-gradient(to bottom, #093606, #38ce01);
+  color: whitesmoke;
 }
+
+/* .message-box.error {
+  color: rgb(122, 0, 0)
+} */
 
 .table {
   width: 100%;
