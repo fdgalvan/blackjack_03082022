@@ -5,27 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blackjack</title>
   <link rel="stylesheet" href="extras/premadeStyles.css">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
 
 </head>
 <body>
   <div class="container">
     <div class="message-box" id="messages">
       <div class="score">
-        <div class="player-score">
-          <div class="player-name">Player</div>
-          <div class="player-score-box">
-            <div class="player-score-shown"></div>
-          </div>
-        </div>
         <div class="round">
           <div class="round-name">Cards Remaining</div>
           <div class="round-number">
             <div class="cards-left-shown"></div>
           </div>
         </div>
+<br>
+        <div class="player-score">
+          <div class="player-name">Player</div>
+          <div class="player-score-box">
+            <div class="player-score-shown"></div>
+          </div>
+        </div>
+<br>
         <div class="dealer-score">
           <div class="dealer-name">House</div>
           <div class="dealer-score-box">
@@ -41,7 +46,7 @@
     <br>
     <br>
     <div class="table">
-      <div class="message">♠ ♣ BLACKJACK ♦ ♥  <br> Let's Play! Over 21 is a bust!</div> 
+      <div class="message">♠ ♣  BLACKJACK  ♦ ♥  <br> Let's Play! Over 21 is a bust!</div> 
       <div class="player">
         <label class="player-name2">House: 
           <span id="dealer-points" class="points"></span>
