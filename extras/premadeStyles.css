@@ -1,7 +1,10 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.87);
+  /* background-color: rgba(0, 0, 0, 0.87); */
+  background-image: url("https://aws1.discourse-cdn.com/pocketgems/uploads/episodeinteractive/original/4X/6/d/e/6de2d3f9544e5fec7096fb4114cb89f2d9eb0bd1.jpeg");
+  background-color: #cccccc;
+
 }
 
 body * {
@@ -18,14 +21,17 @@ body * {
 }
 
 .score {
-  width: 200px;
-  height: 225px;
+  width: 179px;
+  height: 260px;
   padding: 15px;
   border: 5px solid black;
-  border-radius: 20px;
-  background: #52c234;
+  border-radius: 10px;
+  /* background: #52c234;
   background: -webkit-linear-gradient(to bottom, #42b319, #174709);
-  background: linear-gradient(to bottom, #093606, #38ce01);
+  background: linear-gradient(to bottom, #093606, #38ce01); */
+  /* background-image: url("https://wizardofodds.com/wizfiles/gameimages/693/single_deck_blackjack.jpg"); */
+  background-image: url("/blackjack_directory/images/0_card_back_resize.png");
+  background-color: #cccccc;
   color: whitesmoke;
 }
 
@@ -34,16 +40,20 @@ body * {
 } */
 
 .table {
-  width: 100%;
+  position: relative;
+  top: 100px;
+  width: 75%;
   border: 5px solid black;
   border-radius: 75px;
-  background: #52c234;
+  /* background: #52c234;
   background: -webkit-linear-gradient(to bottom, #42b319, #174709);
-  background: linear-gradient(to bottom, #38ce01, #000000);
+  background: linear-gradient(to bottom, #38ce01, #000000); */
+  background-image: url("https://us.123rf.com/450wm/yamabikay/yamabikay1705/yamabikay170500039/77519356-green-felt-texture-for-poker-an-casino-theme-seamless-square-background-tile-ready-high-resolution-p.jpg?ver=6");
   margin: 0 auto;
   color: black;
-  padding: 40px;
+  padding: 50px;
   font-size: 30px;
+  font-family: 'Monoton', cursive;
 }
 
 .player {

@@ -2,9 +2,9 @@ window.addEventListener('DOMContentLoaded', function() {
     })
     //event listener for browser window
 
-    var suits = ['clubs', 'diamonds', 'hearts', 'spades']; //labels the 4 ssuits ♥, ♦, ♣, ♠
+    var suits = ['clubs', 'diamonds', 'hearts', 'spades']; //labels the 4 suits ♥, ♦, ♣, ♠
     
-    var deck = [];
+    var deck = []; // labels the deck
     
     var playerHand = document.querySelector('#player-hand');
     
@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', function() {
     
     var stand = document.querySelector('#stand-button');
     
-    var playAgain = document.querySelector('#again-button');
+    var playAgain = document.querySelector('#again-button'); // "one more time" button
         
     var names = document.querySelectorAll('.player-name2');
     
